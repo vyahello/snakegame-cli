@@ -1,0 +1,17 @@
+# Pycharm trash
+.idea
+__pycache__/
+.python*
+
+# virtualenv
+.venv
+venv/
+venv
+
+# Distribution
+.DS_Store
+.cache/
+
+# python identifiers
+.python-version
+.pytest_cache/
