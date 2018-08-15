@@ -1,41 +1,41 @@
 from abc import ABC, abstractmethod
 from functools import lru_cache
 from typing import Any, Callable
-from snake.environment import Environment
+from snake.terminal import Environment
 
 
 class Window(ABC):
     """Abstract interface for a window."""
 
     @abstractmethod
-    def timeout(self) -> Any:
+    def timeout(self) -> None:
         pass
 
     @abstractmethod
-    def keypad(self, key: int) -> Any:
+    def keypad(self, key: int) -> None:
         pass
 
     @abstractmethod
-    def border(self, item: int) -> Any:
+    def border(self, item: int) -> None:
         pass
 
     @abstractmethod
-    def clear(self) -> Any:
+    def clear(self) -> None:
         pass
 
     @abstractmethod
-    def add_str(self, first: int, second: int, score: str) -> Any:
+    def add_str(self, long: int, lat: int, entity: str) -> None:
         pass
 
     @abstractmethod
-    def getch(self) -> Any:
+    def getch(self) -> int:
         pass
 
 
-class GameWindow(Window):
+class TerminalWindow(Window):
     """Terminal game window interface."""
 
-    def __init__(self, env: Environment, timeout: int) -> None:
+    def __init__(self, env: Environment, timeout: int = 100) -> None:
 
         @lru_cache()
         def _window() -> Any:
@@ -44,20 +44,20 @@ class GameWindow(Window):
         self._timeout: int = timeout
         self._window: Callable[..., Any] = _window
 
-    def timeout(self) -> Any:
-        return self._window().timeout(self._timeout)
+    def timeout(self) -> None:
+        self._window().timeout(self._timeout)
 
-    def keypad(self, key: int) -> Any:
-        return self._window().keypad(key)
+    def keypad(self, key: int) -> None:
+        self._window().keypad(key)
 
-    def border(self, item: int) -> Any:
-        return self._window().border(item)
+    def border(self, item: int) -> None:
+        self._window().border(item)
 
-    def add_str(self, first: int, second: int, score: int) -> Any:
-        return self._window().addstr(first, second, score)
+    def add_str(self, long: int, lat: int, entity: str) -> None:
+        self._window().addstr(long, lat, entity)
 
-    def clear(self) -> Any:
-        return self._window().clear()
+    def clear(self) -> None:
+        self._window().clear()
 
-    def getch(self) -> Any:
+    def getch(self) -> int:
         return self._window().getch()

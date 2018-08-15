@@ -7,11 +7,11 @@ class Environment(ABC):
     """Abstract interface for an environment."""
 
     @abstractmethod
-    def init_screen(self) -> Any:
+    def init_screen(self) -> None:
         pass
 
     @abstractmethod
-    def beep(self) -> Any:
+    def beep(self) -> None:
         pass
 
     @abstractmethod
@@ -19,39 +19,39 @@ class Environment(ABC):
         pass
 
     @abstractmethod
-    def no_echo(self) -> Any:
+    def no_echo(self) -> None:
         pass
 
     @abstractmethod
-    def curse_set(self, curse: int) -> Any:
+    def curse_set(self, curse: int) -> None:
         pass
 
     @abstractmethod
-    def end_window(self) -> Any:
+    def end_window(self) -> None:
         pass
 
 
-class GameEnvironment(Environment):
-    """Terminal game screen interface."""
+class TerminalEnvironment(Environment):
+    """Terminal game environment interface."""
 
     def __init__(self, hight: int, width: int) -> None:
         self._hight: int = hight
         self._width: int = width
 
-    def init_screen(self) -> Any:
-        return curses.initscr()
+    def init_screen(self) -> None:
+        curses.initscr()
 
-    def beep(self) -> Any:
-        return curses.beep()
+    def beep(self) -> None:
+        curses.beep()
 
     def new_window(self) -> Any:
         return curses.newwin(self._hight, self._width)
 
-    def no_echo(self) -> Any:
-        return curses.noecho()
+    def no_echo(self) -> None:
+        curses.noecho()
 
-    def curse_set(self, curse: int) -> Any:
-        return curses.curs_set(curse)
+    def curse_set(self, curse: int) -> None:
+        curses.curs_set(curse)
 
-    def end_window(self) -> Any:
-        return curses.endwin()
+    def end_window(self) -> None:
+        curses.endwin()
