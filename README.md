@@ -1,5 +1,5 @@
 # Terminal snake game
-A simple snake game right from your terminal using python built-in curses package.
+A simple snake game right in your terminal using python built-in `curses` package.
 
 ## Contributing
 
