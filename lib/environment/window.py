@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from functools import lru_cache
 from typing import Any, Callable
-from snake.terminal import Environment
+from lib.environment.terminal import Environment
 
 
 class Window(ABC):
@@ -12,11 +12,11 @@ class Window(ABC):
         pass
 
     @abstractmethod
-    def keypad(self, key: int) -> None:
+    def keypad(self, key: int = 1) -> None:
         pass
 
     @abstractmethod
-    def border(self, item: int) -> None:
+    def border(self, item: int = 0) -> None:
         pass
 
     @abstractmethod
@@ -47,10 +47,10 @@ class TerminalWindow(Window):
     def timeout(self) -> None:
         self._window().timeout(self._timeout)
 
-    def keypad(self, key: int) -> None:
+    def keypad(self, key: int = 1) -> None:
         self._window().keypad(key)
 
-    def border(self, item: int) -> None:
+    def border(self, item: int = 0) -> None:
         self._window().border(item)
 
     def add_str(self, long: int, lat: int, entity: str) -> None:

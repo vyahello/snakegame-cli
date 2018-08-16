@@ -23,7 +23,7 @@ class Environment(ABC):
         pass
 
     @abstractmethod
-    def curse_set(self, curse: int) -> None:
+    def curse_set(self, curse: int = 0) -> None:
         pass
 
     @abstractmethod
@@ -34,9 +34,9 @@ class Environment(ABC):
 class TerminalEnvironment(Environment):
     """Terminal game environment interface."""
 
-    def __init__(self, hight: int, width: int) -> None:
-        self._hight: int = hight
+    def __init__(self, width: int, height: int) -> None:
         self._width: int = width
+        self._height: int = height
 
     def init_screen(self) -> None:
         curses.initscr()
@@ -45,12 +45,12 @@ class TerminalEnvironment(Environment):
         curses.beep()
 
     def new_window(self) -> Any:
-        return curses.newwin(self._hight, self._width)
+        return curses.newwin(self._height, self._width)
 
     def no_echo(self) -> None:
         curses.noecho()
 
-    def curse_set(self, curse: int) -> None:
+    def curse_set(self, curse: int = 0) -> None:
         curses.curs_set(curse)
 
     def end_window(self) -> None:
