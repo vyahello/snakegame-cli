@@ -1,6 +1,21 @@
 # Terminal snake game
 A simple snake game right in your terminal using python built-in `curses` package.
 
+## Run a terminal snake game
+Run script from the root directory of the project:
+```bash
+~ python snake.py
+```
+
+## Demo
+![Screenshot](lib/demo/game.jpg)
+
+## Run unittests
+Run script from the root directory of the project:
+```bash
+~ pytest -s -v
+```
+
 ## Contributing
 
 - clone the repository
