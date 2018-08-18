@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
-from curses import (
-    KEY_RIGHT, KEY_LEFT, KEY_DOWN, KEY_UP
-)
+from lib.control.key import Control, ControlKey
 from lib.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
 from lib.environment.terminal import TerminalEnvironment, Environment
 from lib.snake.food import SnakeFood, Food
@@ -22,6 +20,7 @@ class SnakeGame(Game):
     """Represent terminal snake game."""
 
     def __init__(self) -> None:
+        self._control: Control = ControlKey()
         self._terminal: Environment = TerminalEnvironment(width=WIDTH, height=HEIGHT)
         self._window: Window = TerminalWindow(env=self._terminal)
         self._snake: Snake = TerminalSnake(longitude=SNAKE_LONGITUDE, latitude=SNAKE_LATITUDE, window=self._window)
@@ -33,7 +32,6 @@ class SnakeGame(Game):
         self._terminal.beep()
         self._terminal.no_echo()
         self._terminal.curse_set()
-
         self._window.timeout()
         self._window.keypad()
         self._window.border()
@@ -49,21 +47,19 @@ class SnakeGame(Game):
             if event == 27:
                 break
 
-            if event in [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]:
+            if event in self._control.keys():
                 self._snake.direction(event)
 
-            if (
-                    self._snake.head().longitude == self._food.longitude
-                    and self._snake.head().latitude == self._food.latitude
-            ):
+            if (self._snake.head().longitude == self._food.longitude
+                    and self._snake.head().latitude == self._food.latitude):
                 self._snake.eat(self._food)
 
             if event == 32:
                 key: int = -1
                 while key != 32:
                     key = self._window.getch()
-
             self._snake.update()
+
             if self._snake.collided():
                 break
 

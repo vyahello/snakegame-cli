@@ -1,18 +1,11 @@
 from abc import ABC, abstractmethod
-from curses import (
-    KEY_RIGHT, KEY_LEFT, KEY_DOWN, KEY_UP
-)
 from typing import Dict, List, Tuple, Callable
+from lib.control.key import Control, ControlKey
 from lib.snake import SNAKE_LENGTH
 from lib.environment import MAX_LONGITUDE, MAX_LATITUDE
 from lib.snake.body import SnakeBody, Body
 from lib.environment.window import Window
 from lib.snake.food import Food
-
-_reverse_dir_map: Dict[int, int] = {
-    KEY_UP: KEY_DOWN, KEY_DOWN: KEY_UP,
-    KEY_LEFT: KEY_RIGHT, KEY_RIGHT: KEY_LEFT,
-}
 
 
 class Snake(ABC):
@@ -67,19 +60,20 @@ class TerminalSnake(Snake):
     """Concrete terminal snake."""
 
     def __init__(self, longitude: int, latitude: int, window: Window) -> None:
+        self._control: Control = ControlKey()
         self._body_list: List[...] = list()
         self._body: Callable[[int], Body] = lambda track: SnakeBody(long=longitude - track, lat=latitude)
         self._head: Body = SnakeBody(long=longitude, lat=latitude, entity='O')
         self._score: int = 0
         self._timeout: int = 100
         self._window: Window = window
-        self._direction: int = KEY_RIGHT
+        self._direction: Callable = self._control.right
         self._last_head_location: Tuple[int, int] = (longitude, latitude)
         self._direction_map: Dict[int, Callable[..., ...]] = {
-            KEY_UP: self.move_up,
-            KEY_DOWN: self.move_down,
-            KEY_LEFT: self.move_left,
-            KEY_RIGHT: self.move_right
+            self._control.up: self.move_up,
+            self._control.down: self.move_down,
+            self._control.left: self.move_left,
+            self._control.right: self.move_right
         }
         self.prepare()
 
@@ -112,7 +106,7 @@ class TerminalSnake(Snake):
         self._direction_map[self._direction]()
 
     def direction(self, direction: int) -> None:
-        if direction != _reverse_dir_map[self._direction]:
+        if direction != self._control.reverse_direction_map()[self._direction]:
             self._direction = direction
 
     def render(self) -> None:
