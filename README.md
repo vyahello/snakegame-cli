@@ -1,3 +1,6 @@
+[![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE.md)
+
 # Terminal snake game
 A simple snake game right in your terminal using python built-in `curses` package.
 
