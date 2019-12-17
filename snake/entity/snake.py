@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
-from typing import Dict, List, Tuple, Callable
+from dataclasses import dataclass
+from typing import Dict, List, Tuple, Callable, Any
 from snake.control.key import Control, ControlKey
-from snake.snake import SNAKE_LENGTH
+from snake.entity import SNAKE_LENGTH
 from snake.environment import MAX_LONGITUDE, MAX_LATITUDE
-from snake.snake.body import SnakeBody, Body
+from snake.entity.body import SnakeBody, Body
 from snake.environment.window import Window
-from snake.snake.food import Food
+from snake.entity.food import Food
 
 
 class Snake(ABC):
@@ -56,24 +57,31 @@ class Snake(ABC):
         pass
 
 
+@dataclass
+class SnakeSetup:
+    """Represents snake game setup item."""
+
+    window: Window
+    score: int = 0
+    timeout: int = 100
+    control: Control = ControlKey()
+    direction: Callable = control.right
+
+
 class TerminalSnake(Snake):
     """Concrete terminal snake."""
 
     def __init__(self, longitude: int, latitude: int, window: Window) -> None:
-        self._control: Control = ControlKey()
+        self._setup = SnakeSetup(window)
         self._body_list: List[...] = list()
         self._body: Callable[[int], Body] = lambda track: SnakeBody(long=longitude - track, lat=latitude)
-        self._head: Body = SnakeBody(long=longitude, lat=latitude, entity='O')
-        self._score: int = 0
-        self._timeout: int = 100
-        self._window: Window = window
-        self._direction: Callable = self._control.right
+        self._head: Body = SnakeBody(long=longitude, lat=latitude, entity="O")
         self._last_head_location: Tuple[int, int] = (longitude, latitude)
-        self._direction_map: Dict[int, Callable[..., ...]] = {
-            self._control.up: self.move_up,
-            self._control.down: self.move_down,
-            self._control.left: self.move_left,
-            self._control.right: self.move_right
+        self._direction_map: Dict[Any, Callable[..., ...]] = {
+            self._setup.control.up: self.move_up,
+            self._setup.control.down: self.move_down,
+            self._setup.control.left: self.move_left,
+            self._setup.control.right: self.move_right,
         }
         self.prepare()
 
@@ -83,37 +91,37 @@ class TerminalSnake(Snake):
         self._body_list.append(self._head)
 
     def score(self) -> str:
-        return f'Your Score : {self._score}'
+        return f"Your Score : {self._setup.score}"
 
     def eat(self, food: Food) -> None:
         food.reset()
         body: Body = SnakeBody(*self._last_head_location)
         self._body_list.insert(-1, body)
-        self._score += 1
-        if self._score % 3 == 0:
-            self._timeout -= 5
-            self._window.timeout()
+        self._setup.score += 1
+        if self._setup.score % 3 == 0:
+            self._setup.timeout -= 5
+            self._setup.window.timeout()
 
     def collided(self) -> bool:
         return any([body.location() == self.head().location() for body in self._body_list[:-1]])
 
     def update(self) -> None:
-        last_body: Body = self._body_list.pop(0)
-        last_body.longitude: int = self._body_list[-1].longitude
-        last_body.latitude: int = self._body_list[-1].latitude
+        last_body: SnakeBody = self._body_list.pop(0)
+        last_body.longitude = self._body_list[-1].longitude
+        last_body.latitude = self._body_list[-1].latitude
         self._body_list.insert(-1, last_body)
         self._last_head_location = self.head().longitude, self.head().latitude
-        self._direction_map[self._direction]()
+        self._direction_map[self._setup.direction]()
 
     def direction(self, direction: int) -> None:
-        if direction != self._control.reverse_direction_map()[self._direction]:
-            self._direction = direction
+        if direction != self._setup.control.reverse_direction_map()[self._setup.direction]:
+            self._setup.direction = direction
 
     def render(self) -> None:
         for body in self._body_list:
-            self._window.add_str(body.latitude, body.longitude, body.entity())
+            self._setup.window.add_string(body.latitude, body.longitude, body.entity())
 
-    def head(self) -> Body:
+    def head(self) -> SnakeBody:
         return self._body_list[-1]
 
     def move_up(self) -> None:

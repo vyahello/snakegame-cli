@@ -1,13 +1,13 @@
 import pytest
-from snake.snake.body import Body, SnakeBody
+from snake.entity.body import Body, SnakeBody
 
 
 _long: int = 10
 _lat: int = 5
-_entity: str = 'x'
+_entity: str = "x"
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def body() -> Body:
     return SnakeBody(_long, _lat, _entity)
 
@@ -21,7 +21,7 @@ def test_lat(body: Body) -> None:
 
 
 def test_entity(body: Body) -> None:
-    assert body.entity() == 'x'
+    assert body.entity() == "x"
 
 
 def test_location(body: Body) -> None:

@@ -16,7 +16,7 @@ class FakeWindow(Window):
     def clear(self) -> None:
         pass
 
-    def add_str(self, long: int, lat: int, entity: str) -> None:
+    def add_string(self, long: int, lat: int, entity: str) -> None:
         pass
 
     def getch(self) -> int:

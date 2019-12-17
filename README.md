@@ -21,11 +21,11 @@
 ## Usage
 Run script from the root directory of the project:
 ```bash
-~ python snake.py
+~ python game.py
 ```
 
 ### Demo
-![Screenshot](snake/demo/game.jpg)
+![Screenshot](pic/game.jpg)
 
 ## Development notes
 

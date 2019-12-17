@@ -7,7 +7,7 @@ _down: int = 258
 _up: int = 259
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def control() -> Control:
     return ControlKey()
 
@@ -37,10 +37,12 @@ def test_len_keys(control: Control) -> None:
 
 
 def test_reverse_direction_map(control: Control) -> None:
-    assert control.reverse_direction_map() == {control.up: control.down,
-                                               control.down: control.up,
-                                               control.left: control.right,
-                                               control.right: control.left}
+    assert control.reverse_direction_map() == {
+        control.up: control.down,
+        control.down: control.up,
+        control.left: control.right,
+        control.right: control.left,
+    }
 
 
 def test_len_reverse_direction_map(control: Control) -> None:

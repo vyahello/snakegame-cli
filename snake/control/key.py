@@ -1,28 +1,27 @@
 from abc import ABC, abstractmethod
-from curses import (
-    KEY_RIGHT,
-    KEY_LEFT,
-    KEY_DOWN,
-    KEY_UP
-)
+from curses import KEY_RIGHT, KEY_LEFT, KEY_DOWN, KEY_UP
 from typing import Iterable, Dict
 
 
 class Control(ABC):
     """Abstract interface for a fame control."""
 
+    @property
     @abstractmethod
     def right(self) -> int:
         pass
 
+    @property
     @abstractmethod
     def left(self) -> int:
         pass
 
+    @property
     @abstractmethod
     def down(self) -> int:
         pass
 
+    @property
     @abstractmethod
     def up(self) -> int:
         pass
@@ -62,17 +61,7 @@ class ControlKey(Control):
         return self._up
 
     def keys(self) -> Iterable[int]:
-        return (
-            self._right,
-            self._left,
-            self._down,
-            self._up
-        )
+        return self._right, self._left, self._down, self._up
 
     def reverse_direction_map(self) -> Dict[int, int]:
-        return {
-            self._up: self._down,
-            self._down: self._up,
-            self._left: self._right,
-            self._right: self._left
-        }
+        return {self._up: self._down, self._down: self._up, self._left: self._right, self._right: self._left}

@@ -15,3 +15,8 @@ venv
 # python identifiers
 .python-version
 .pytest_cache/
+
+
+# pytest trash
+.coverage
+test-report.html

@@ -24,7 +24,7 @@ class Window(ABC):
         pass
 
     @abstractmethod
-    def add_str(self, long: int, lat: int, entity: str) -> None:
+    def add_string(self, long: int, lat: int, entity: str) -> None:
         pass
 
     @abstractmethod
@@ -36,7 +36,6 @@ class TerminalWindow(Window):
     """Terminal game window interface."""
 
     def __init__(self, env: Environment, timeout: int = 100) -> None:
-
         @lru_cache()
         def _window() -> Any:
             return env.new_window()
@@ -53,7 +52,7 @@ class TerminalWindow(Window):
     def border(self, item: int = 0) -> None:
         self._window().border(item)
 
-    def add_str(self, long: int, lat: int, entity: str) -> None:
+    def add_string(self, long: int, lat: int, entity: str) -> None:
         self._window().addstr(long, lat, entity)
 
     def clear(self) -> None:

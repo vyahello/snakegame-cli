@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 from snake.control.key import Control, ControlKey
 from snake.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
 from snake.environment.terminal import TerminalEnvironment, Environment
-from snake.snake.food import SnakeFood, Food
+from snake.entity.food import SnakeFood, Food
 from snake.environment.window import Window, TerminalWindow
-from snake.snake import SNAKE_LONGITUDE, SNAKE_LATITUDE
-from snake.snake.snake import Snake, TerminalSnake
+from snake.entity import SNAKE_LONGITUDE, SNAKE_LATITUDE
+from snake.entity.snake import Snake, TerminalSnake
 
 
 class Game(ABC):
@@ -14,6 +14,13 @@ class Game(ABC):
     @abstractmethod
     def run(self) -> None:
         pass
+
+    @abstractmethod
+    def name(self) -> str:
+        pass
+
+    def __str__(self) -> str:
+        return self.__class__.__name__
 
 
 class SnakeGame(Game):
@@ -41,7 +48,7 @@ class SnakeGame(Game):
             self._window.border(item=0)
             self._snake.render()
             self._food.render()
-            self._window.add_str(long=0, lat=5, entity=self._snake.score())
+            self._window.add_string(long=0, lat=5, entity=self._snake.score())
             event: int = self._window.getch()
 
             if event == 27:
@@ -50,9 +57,9 @@ class SnakeGame(Game):
             if event in self._control.keys():
                 self._snake.direction(event)
 
-            if (self._snake.head().longitude == self._food.longitude
-                    and self._snake.head().latitude == self._food.latitude):
-                self._snake.eat(self._food)
+            if self._snake.head().longitude == self._food.longitude:
+                if self._snake.head().latitude == self._food.latitude:
+                    self._snake.eat(self._food)
 
             if event == 32:
                 key: int = -1
@@ -64,3 +71,6 @@ class SnakeGame(Game):
                 break
 
         self._terminal.end_window()
+
+    def name(self) -> str:
+        return f"Terminal game called '{self}'"

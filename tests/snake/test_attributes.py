@@ -1,4 +1,4 @@
-from snake.snake import SNAKE_LENGTH, SNAKE_LATITUDE, SNAKE_LONGITUDE
+from snake.entity import SNAKE_LENGTH, SNAKE_LATITUDE, SNAKE_LONGITUDE
 
 
 def test_snake_length() -> None:

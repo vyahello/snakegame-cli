@@ -6,9 +6,4 @@ MAX_LONGITUDE = 58
 MAX_LATITUDE = 36
 
 
-__all__: Iterable[str] = (
-    'WIDTH',
-    'HEIGHT',
-    'MAX_LONGITUDE',
-    'MAX_LATITUDE'
-)
+__all__: Iterable[str] = ("WIDTH", "HEIGHT", "MAX_LONGITUDE", "MAX_LATITUDE")

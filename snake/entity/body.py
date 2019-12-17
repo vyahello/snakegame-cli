@@ -5,10 +5,12 @@ from typing import Tuple
 class Body(ABC):
     """Abstract interface for a body."""
 
+    @property
     @abstractmethod
     def longitude(self) -> int:
         pass
 
+    @property
     @abstractmethod
     def latitude(self) -> int:
         pass
@@ -25,7 +27,7 @@ class Body(ABC):
 class SnakeBody(Body):
     """Represent snake body interfaces."""
 
-    def __init__(self, long: int, lat: int, entity: str = 'x') -> None:
+    def __init__(self, long: int, lat: int, entity: str = "x") -> None:
         self._longitude: int = long
         self._latitude: int = lat
         self._entity: str = entity
