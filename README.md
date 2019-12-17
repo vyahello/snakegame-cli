@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/snakegame-cli/badge.svg?branch=master)](https://coveralls.io/github/vyahello/snakegame-cli?branch=master)
+
 [![Forks](https://img.shields.io/github/forks/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/stargazers)
 [![Issues](https://img.shields.io/github/issues/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/issues)
@@ -12,7 +13,7 @@
 > A simple snake game right in your terminal using python built-in `curses` package.
 
 **Tools/features**
- - python 3.7
+ - python 3.6, 3.7, 3.8
  - curses
  - pytest
  - shell
@@ -25,14 +26,14 @@ Run script from the root directory of the project:
 ```
 
 ### Demo
-![Screenshot](pic/game.jpg)
+![Screenshot](snake/pic/game.jpg)
 
 ## Development notes
 
 ### Run unittests
 Run script from the root directory of the project:
 ```bash
-~ pytest -s -v
+~ pytest
 ```
 
 ### Release notes
@@ -55,3 +56,4 @@ You can reach out me at:
 1. clone the repository
 2. configure Git for the first time after cloning with your `name` and `email`
 3. `pip install -r requirements.txt` to install all project dependencies
+4. `pip install -r requirements-dev.txt` to install all project development dependencies
