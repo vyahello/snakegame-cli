@@ -1,5 +1,5 @@
 import pytest
-from lib.snake.body import Body, SnakeBody
+from snake.snake.body import Body, SnakeBody
 
 
 _long: int = 10

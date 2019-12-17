@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-from lib.control.key import Control, ControlKey
-from lib.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
-from lib.environment.terminal import TerminalEnvironment, Environment
-from lib.snake.food import SnakeFood, Food
-from lib.environment.window import Window, TerminalWindow
-from lib.snake import SNAKE_LONGITUDE, SNAKE_LATITUDE
-from lib.snake.snake import Snake, TerminalSnake
+from snake.control.key import Control, ControlKey
+from snake.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
+from snake.environment.terminal import TerminalEnvironment, Environment
+from snake.snake.food import SnakeFood, Food
+from snake.environment.window import Window, TerminalWindow
+from snake.snake import SNAKE_LONGITUDE, SNAKE_LATITUDE
+from snake.snake.snake import Snake, TerminalSnake
 
 
 class Game(ABC):

@@ -1,4 +1,4 @@
-from lib.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
+from snake.environment import WIDTH, HEIGHT, MAX_LONGITUDE, MAX_LATITUDE
 
 
 def test_env_width() -> None:

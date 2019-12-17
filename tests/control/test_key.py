@@ -1,5 +1,5 @@
 import pytest
-from lib.control.key import Control, ControlKey
+from snake.control.key import Control, ControlKey
 
 _right: int = 261
 _left: int = 260

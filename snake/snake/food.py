@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from random import randint
-from lib.environment.window import Window
+from snake.environment.window import Window
 
 
 class Food(ABC):

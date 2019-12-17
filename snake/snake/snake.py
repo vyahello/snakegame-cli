@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Tuple, Callable
-from lib.control.key import Control, ControlKey
-from lib.snake import SNAKE_LENGTH
-from lib.environment import MAX_LONGITUDE, MAX_LATITUDE
-from lib.snake.body import SnakeBody, Body
-from lib.environment.window import Window
-from lib.snake.food import Food
+from snake.control.key import Control, ControlKey
+from snake.snake import SNAKE_LENGTH
+from snake.environment import MAX_LONGITUDE, MAX_LATITUDE
+from snake.snake.body import SnakeBody, Body
+from snake.environment.window import Window
+from snake.snake.food import Food
 
 
 class Snake(ABC):

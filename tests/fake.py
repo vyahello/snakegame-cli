@@ -1,4 +1,4 @@
-from lib.environment.window import Window
+from snake.environment.window import Window
 
 
 class FakeWindow(Window):

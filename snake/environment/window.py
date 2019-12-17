@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from functools import lru_cache
 from typing import Any, Callable
-from lib.environment.terminal import Environment
+from snake.environment.terminal import Environment
 
 
 class Window(ABC):

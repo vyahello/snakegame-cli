@@ -1,6 +1,15 @@
-from lib.game import Game, SnakeGame
+from snake.game import Game, SnakeGame
+
+
+def _run_game(game: Game) -> None:
+    """Runs specific game."""
+    game.run()
+
+
+def _run_snake_game() -> None:
+    """Runs snake game."""
+    _run_game(SnakeGame())
 
 
 if __name__ == '__main__':
-    game: Game = SnakeGame()
-    game.run()
+    _run_snake_game()
