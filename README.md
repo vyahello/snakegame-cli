@@ -1,12 +1,17 @@
+[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
-[![Coverage Status](https://coveralls.io/repos/github/vyahello/snakegame-cli/badge.svg?branch=master)](https://coveralls.io/github/vyahello/snakegame-cli?branch=master)
+[![Coverage Status](https://img.shields.io/badge/coverage-56%25-orange)](https://img.shields.io/badge/coverage-56%25-orange)
 
 [![Forks](https://img.shields.io/github/forks/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/stargazers)
+[![GitHub contributors](https://img.shields.io/github/watchers/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/watchers/)
 [![Issues](https://img.shields.io/github/issues/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/contributors/)
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE.md)
+[![License: GPL-3.0](https://img.shields.io/github/license/vyahello/snakegame-cli)](LICENSE.md)
 [![Hits-of-Code](https://hitsofcode.com/github/vyahello/snakegame-cli)](https://hitsofcode.com/view/github/vyahello/nakegame-cli)
 
 # Terminal snake game
@@ -17,7 +22,7 @@
  - curses
  - pytest
  - shell
- - travis/github CI
+ - travis CI
 
 ## Usage
 Run script from the root directory of the project:
@@ -30,14 +35,25 @@ Run script from the root directory of the project:
 
 ## Development notes
 
-### Run unittests
-Run script from the root directory of the project:
+### Run code analysis
+In general static code analysis consists of following tools: `black`, `flake8`, `pylint`, `mypy` and `unittests` accordingly.
+To be able to start static code analysis **locally** please run following script from the root directory of the project:
 ```bash
-~ pytest
+➜ ./analyse-code.sh install-dependencies
 ```
+Anyway, this script is triggered via `Travis CI`.
+
+### Run unittests
+Also you can run unittests separately. Please run script from the root directory of the project:
+```bash
+➜ pytest
+```
+After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
+* 1.0.0
+    * Introduce PYPI package
 * 0.2.0
     * Add navigation options
 * 0.1.0
