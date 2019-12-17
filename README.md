@@ -1,4 +1,4 @@
-[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli)
+[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli/releases)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
@@ -6,7 +6,7 @@
 
 [![Forks](https://img.shields.io/github/forks/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/stargazers)
-[![GitHub contributors](https://img.shields.io/github/watchers/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/watchers/)
+[![GitHub watchers](https://img.shields.io/github/watchers/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/watchers/)
 [![Issues](https://img.shields.io/github/issues/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/contributors/)
 
