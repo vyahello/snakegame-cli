@@ -59,7 +59,8 @@ function run-pylint-analysis {
     echo "Running pylint analysis ..." && ( pylint $(find "${PROJECT_FILES}" -iname "*.py") )
 }
 
-function run-mypy-analysis() {
+
+function run-mypy-analysis {
     echo "Running mypy analysis ..." && mypy --package "${LIB_FILES}"
 }
 
