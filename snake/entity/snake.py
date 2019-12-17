@@ -65,7 +65,7 @@ class SnakeSetup:
     score: int = 0
     timeout: int = 100
     control: Control = ControlKey()
-    direction: Callable = control.right
+    direction: int = control.right
 
 
 class TerminalSnake(Snake):
