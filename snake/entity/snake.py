@@ -73,11 +73,11 @@ class TerminalSnake(Snake):
 
     def __init__(self, longitude: int, latitude: int, window: Window) -> None:
         self._setup = SnakeSetup(window)
-        self._body_list: List[...] = list()
+        self._body_list: List[Any] = list()
         self._body: Callable[[int], Body] = lambda track: SnakeBody(long=longitude - track, lat=latitude)
         self._head: Body = SnakeBody(long=longitude, lat=latitude, entity="O")
         self._last_head_location: Tuple[int, int] = (longitude, latitude)
-        self._direction_map: Dict[Any, Callable[..., ...]] = {
+        self._direction_map: Dict[Any, Callable[..., Any]] = {
             self._setup.control.up: self.move_up,
             self._setup.control.down: self.move_down,
             self._setup.control.left: self.move_left,

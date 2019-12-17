@@ -1,7 +1,7 @@
-from typing import Iterable
+from typing import Sequence
 
-SNAKE_LENGTH = 5
-SNAKE_LONGITUDE = 6
-SNAKE_LATITUDE = 3
+SNAKE_LENGTH: int = 5
+SNAKE_LONGITUDE: int = 6
+SNAKE_LATITUDE: int = 3
 
-__all__: Iterable[str] = ("SNAKE_LENGTH", "SNAKE_LONGITUDE", "SNAKE_LATITUDE")
+__all__: Sequence[str] = ("SNAKE_LENGTH", "SNAKE_LONGITUDE", "SNAKE_LATITUDE")

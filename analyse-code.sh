@@ -59,9 +59,9 @@ function run-pylint-analysis {
     echo "Running pylint analysis ..." && ( pylint $(find "${PROJECT_FILES}" -iname "*.py") )
 }
 
-#function run-mypy-analysis() {
-#    echo "Running mypy analysis ..." && mypy --package "${LIB_FILES}"
-#}
+function run-mypy-analysis() {
+    echo "Running mypy analysis ..." && mypy --package "${LIB_FILES}"
+}
 
 
 function run-code-analysis {
@@ -71,7 +71,7 @@ function run-code-analysis {
     run-black-analysis || store-failures "black analysis is failed!"
     run-flake8-analysis || store-failures "flake8 analysis is failed!"
     run-pylint-analysis || store-failures "pylint analysis is failed!"
-#    run-mypy-analysis || store-failures "mypy analysis is failed!"
+    run-mypy-analysis || store-failures "mypy analysis is failed!"
 
     if [[ ${#RESULT[@]} -ne 0 ]];
         then echo -e "${FAILED_OUT}Some errors occurred while analysing the code quality.${NONE_OUT}"
