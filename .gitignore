@@ -16,7 +16,10 @@ venv
 .python-version
 .pytest_cache/
 
-
 # pytest trash
 .coverage
 test-report.html
+
+# pypi assets
+dist/
+build/
