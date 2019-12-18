@@ -14,8 +14,13 @@
 [![License: GPL-3.0](https://img.shields.io/github/license/vyahello/snakegame-cli)](LICENSE.md)
 [![Hits-of-Code](https://hitsofcode.com/github/vyahello/snakegame-cli)](https://hitsofcode.com/view/github/vyahello/nakegame-cli)
 
+[![PyPI version shields.io](https://img.shields.io/pypi/v/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame/)
+
+
 # Terminal snake game
 > A simple snake game right in your terminal using python built-in `curses` package.
+> Just try it, it is fun :)
 
 **Tools/features**
  - python 3.6, 3.7, 3.8
@@ -23,17 +28,35 @@
  - pytest
  - shell
  - travis CI
+ - PYPI distributed
 
 ## Usage
 Run script from the root directory of the project:
 ```bash
-~ python game.py
+➜ python game.py
 ```
 
 ### Demo
 ![Screenshot](snake/pic/game.jpg)
 
 ## Development notes
+
+### Install from PYPI
+
+Please run command from the root directory of the project:
+```bash
+➜ pip install cli-snakegame
+```
+Then please execute instructions below to run game from your environment:
+```python
+from snake.game import Game, SnakeGame
+
+game: Game = SnakeGame()
+
+game.name()
+game.run()
+...
+```
 
 ### Run code analysis
 In general static code analysis consists of following tools: `black`, `flake8`, `pylint`, `mypy` and `unittests` accordingly.
