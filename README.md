@@ -1,6 +1,5 @@
-[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli/releases)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-
+[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli/releases)
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
 [![Coverage Status](https://img.shields.io/badge/coverage-56%25-orange)](https://img.shields.io/badge/coverage-56%25-orange)
 
@@ -22,7 +21,7 @@
 > A simple snake game right in your terminal using python built-in `curses` package.
 > Just try it, it is fun :)
 
-**Tools/features**
+## Tools/features
  - python 3.6, 3.7, 3.8
  - curses
  - pytest
@@ -31,33 +30,23 @@
  - PYPI distributed
 
 ## Usage
-Run script from the root directory of the project:
+Please run following script to obtain latest package from PYPI:
 ```bash
-➜ python game.py
+➜ pip install cli-snakegame
+```
+Then please execute instructions below to launch game from your environment:
+```python
+from snake.game import Game, SnakeGame
+
+game: Game = SnakeGame()
+game.run()
+...
 ```
 
 ### Demo
 ![Screenshot](snake/pic/game.jpg)
 
 ## Development notes
-
-### Install from PYPI
-
-Please run command from the root directory of the project:
-```bash
-➜ pip install cli-snakegame
-```
-Then please execute instructions below to run game from your environment:
-```python
-from snake.game import Game, SnakeGame
-
-game: Game = SnakeGame()
-
-game.name()
-game.run()
-...
-```
-
 ### Run code analysis
 In general static code analysis consists of following tools: `black`, `flake8`, `pylint`, `mypy` and `unittests` accordingly.
 To be able to start static code analysis **locally** please run following script from the root directory of the project:
@@ -75,6 +64,8 @@ After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
+* 1.0.1
+    * Polish documentation
 * 1.0.0
     * Introduce PYPI package
 * 0.2.0
