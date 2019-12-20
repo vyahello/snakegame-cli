@@ -10,7 +10,7 @@ def _description() -> str:
 
 setup(
     name="cli-snakegame",
-    version="1.0.1",
+    version="1.1.0",
     author="Volodymyr Yahello",
     author_email="vyahello@gmail.com",
     description="A simple snake game right in your command line. Just try it, it is fun :)",
@@ -19,11 +19,13 @@ setup(
     url="https://github.com/vyahello/snakegame-cli",
     packages=find_packages(),
     classifiers=[
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.4",
 )
