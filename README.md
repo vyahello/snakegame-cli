@@ -22,7 +22,7 @@
 > Just try it, it is fun :)
 
 ## Tools/features
- - python 3.6, 3.7, 3.8
+ - python 3.4, 3.5, 3.6, 3.7, 3.8
  - curses
  - pytest
  - shell
@@ -38,7 +38,7 @@ Then please execute instructions below to launch game from your environment:
 ```python
 from snake.game import Game, SnakeGame
 
-game: Game = SnakeGame()
+game = SnakeGame()
 game.run()
 ...
 ```
