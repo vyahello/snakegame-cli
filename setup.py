@@ -10,7 +10,7 @@ def _description() -> str:
 
 setup(
     name="cli-snakegame",
-    version="1.1.0",
+    version="1.1.1",
     author="Volodymyr Yahello",
     author_email="vyahello@gmail.com",
     description="A simple snake game right in your command line. Just try it, it is fun :)",

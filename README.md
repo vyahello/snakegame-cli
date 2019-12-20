@@ -18,7 +18,7 @@
 
 
 # Terminal snake game
-> A simple snake game right in your terminal using python built-in `curses` package.
+> A simple snake game right in your terminal using python built-in [curses](https://docs.python.org/3/howto/curses.html) package.
 > Just try it, it is fun :)
 
 ## Tools/features
@@ -64,6 +64,11 @@ After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
+* 1.1.1
+    * Add link to curses package in readme
+* 1.1.0
+    * Support python >=3.4 version
+    * Support python >=3.5 version
 * 1.0.1
     * Polish documentation
 * 1.0.0
