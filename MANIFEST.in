@@ -1,0 +1,4 @@
+include LICENSE.md
+include AUTHORS.md
+include README.md
+global-exclude *.pyc
