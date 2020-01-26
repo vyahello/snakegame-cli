@@ -37,4 +37,5 @@ if __name__ == "__main__":
             "Operating System :: OS Independent",
         ],
         python_requires=">=3.4",
+        entry_points={"console_scripts": ["pysnake = snake.__main__:easyrun"]},
     )

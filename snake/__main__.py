@@ -12,8 +12,10 @@ def easyrun(run: bool, name: str) -> None:
         print(f"Running {game.name()}")
         game.run()
     else:
-        del game
         print(f"{' Nothing to run ':=^50}")
+        context: click.Context = click.get_current_context()
+        click.echo(context.get_help())
+        context.exit(0)
 
 
 if __name__ == "__main__":

@@ -37,21 +37,16 @@ Please run following script to obtain latest package from PYPI:
 ```bash
 ➜ pip install cli-snakegame
 ```
-Then please execute instructions below to launch game from your environment:
-```python
-from snake.game import SnakeGame
-
-game = SnakeGame(name="pysnake")
-game.run()
-...
+Then please execute `pysnake` CLI tool from your shell:
+```bash
+➜ pysnake
 ```
 
 ### Run from source code
 
-Then please execute command from the root source directory:
+Please execute command from the root of your source directory:
 ```bash
 ➜ python -m snake --run --name pysnake
-...
 ```
 
 ### Demo
