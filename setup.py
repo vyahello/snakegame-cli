@@ -17,7 +17,7 @@ def _requirements() -> Sequence[str]:
 if __name__ == "__main__":
     setup(
         name="cli-snakegame",
-        version="1.2.0",
+        version="1.2.1",
         author="Volodymyr Yahello",
         author_email="vyahello@gmail.com",
         description="A simple snake game right in your command line. Just try it, it is fun :)",
