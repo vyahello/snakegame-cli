@@ -26,7 +26,8 @@ class Game(ABC):
 class SnakeGame(Game):
     """Represent terminal snake game."""
 
-    def __init__(self) -> None:
+    def __init__(self, name: str) -> None:
+        self._name = name
         self._control: Control = ControlKey()
         self._terminal: Environment = TerminalEnvironment(width=WIDTH, height=HEIGHT)
         self._window: Window = TerminalWindow(env=self._terminal)
@@ -73,4 +74,4 @@ class SnakeGame(Game):
         self._terminal.end_window()
 
     def name(self) -> str:
-        return f"Terminal game called '{self}'"
+        return f"Terminal game called '{self._name}'"

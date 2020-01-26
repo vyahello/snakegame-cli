@@ -1,4 +1,2 @@
 dataclasses==0.6
-setuptools==42.0.2
-wheel==0.33.6
-twine==3.1.1
+click==7.0.0

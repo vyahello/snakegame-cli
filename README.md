@@ -1,8 +1,6 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![GitHub version](https://badge.fury.io/gh/vyahello%2Fsnakegame-cli.svg)](https://github.com/vyahello/snakegame-cli/releases)
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
 [![Coverage Status](https://img.shields.io/badge/coverage-56%25-orange)](https://img.shields.io/badge/coverage-56%25-orange)
-
 [![Forks](https://img.shields.io/github/forks/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/snakegame-cli)](https://github.com/vyahello/snakegame-cli/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/vyahello/snakegame-cli.svg)](https://GitHub.com/vyahello/snakegame-cli/graphs/watchers/)
@@ -11,35 +9,48 @@
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 [![License: GPL-3.0](https://img.shields.io/github/license/vyahello/snakegame-cli)](LICENSE.md)
-[![Hits-of-Code](https://hitsofcode.com/github/vyahello/snakegame-cli)](https://hitsofcode.com/view/github/vyahello/nakegame-cli)
-
+[![Hits-of-Code](https://hitsofcode.com/github/vyahello/snakegame-cli)](https://hitsofcode.com/view/github/vyahello/snakegame-cli)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame/)
 
-
 # Terminal snake game
-> A simple snake game right in your terminal using python built-in [curses](https://docs.python.org/3/howto/curses.html) package.
+> A simple snake game right in your terminal using python built-in **curses** package.
 > Just try it, it is fun :)
 
 ## Tools/features
- - python 3.4, 3.5, 3.6, 3.7, 3.8
- - curses
- - pytest
- - shell
- - travis CI
- - PYPI distributed
+- python 3.4 | 3.5 | 3.6 | 3.7 | 3.8
+- [curses](https://docs.python.org/3/library/curses.html)
+- [travis CI](https://travis-ci.org/)
+- [PYPI distribution](https://pypi.org/project/cli-snakegame)
+- code analysis
+  - [pytest](https://pypi.org/project/pytest/)
+  - [mypy](http://mypy.readthedocs.io/en/latest)
+  - [black](https://black.readthedocs.io/en/stable/)
+  - [pylint](https://www.pylint.org/)
+  - [flake8](http://flake8.pycqa.org/en/latest/)
 
 ## Usage
+Please press **esc** or **cntl+c** to stop the game.
+
+### Installation
 Please run following script to obtain latest package from PYPI:
 ```bash
 ➜ pip install cli-snakegame
 ```
 Then please execute instructions below to launch game from your environment:
 ```python
-from snake.game import Game, SnakeGame
+from snake.game import SnakeGame
 
-game = SnakeGame()
+game = SnakeGame(name="pysnake")
 game.run()
+...
+```
+
+### Run from source code
+
+Then please execute command from the root source directory:
+```bash
+➜ python -m snake --run --name pysnake
 ...
 ```
 
@@ -47,6 +58,7 @@ game.run()
 ![Screenshot](snake/pic/game.jpg)
 
 ## Development notes
+
 ### Run code analysis
 In general static code analysis consists of following tools: `black`, `flake8`, `pylint`, `mypy` and `unittests` accordingly.
 To be able to start static code analysis **locally** please run following script from the root directory of the project:

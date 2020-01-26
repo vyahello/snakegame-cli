@@ -1,4 +1,4 @@
-from typing import IO
+from typing import IO, Sequence
 from setuptools import setup, find_packages
 
 
@@ -8,24 +8,33 @@ def _description() -> str:
         return readme.read()
 
 
-setup(
-    name="cli-snakegame",
-    version="1.1.1",
-    author="Volodymyr Yahello",
-    author_email="vyahello@gmail.com",
-    description="A simple snake game right in your command line. Just try it, it is fun :)",
-    long_description=_description(),
-    long_description_content_type="text/markdown",
-    url="https://github.com/vyahello/snakegame-cli",
-    packages=find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        "Operating System :: OS Independent",
-    ],
-    python_requires=">=3.4",
-)
+def _requirements() -> Sequence[str]:
+    """Returns requirements sequence."""
+    with open("requirements.txt", "r") as requirements:  # type: IO
+        return tuple(map(str.strip, requirements.readlines()))
+
+
+if __name__ == "__main__":
+    setup(
+        name="cli-snakegame",
+        version="1.1.1",
+        author="Volodymyr Yahello",
+        author_email="vyahello@gmail.com",
+        description="A simple snake game right in your command line. Just try it, it is fun :)",
+        long_description=_description(),
+        long_description_content_type="text/markdown",
+        url="https://github.com/vyahello/snakegame-cli",
+        packages=find_packages(),
+        include_package_data=True,
+        install_requires=_requirements(),
+        classifiers=[
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: 3.7",
+            "Programming Language :: Python :: 3.8",
+            "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+            "Operating System :: OS Independent",
+        ],
+        python_requires=">=3.4",
+    )
