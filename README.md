@@ -16,6 +16,8 @@
 # Terminal snake game
 > A simple snake game right in your terminal using python built-in **curses** package.
 > Just try it, it is fun :)
+>
+> ![Screenshot](snake/pic/game.jpg)
 
 ## Tools/features
 - python 3.4 | 3.5 | 3.6 | 3.7 | 3.8
@@ -49,9 +51,6 @@ Please execute command from the root of your source directory:
 ➜ python -m snake --run --name pysnake
 ```
 
-### Demo
-![Screenshot](snake/pic/game.jpg)
-
 ## Development notes
 
 ### Run code analysis
@@ -71,6 +70,8 @@ After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
+* 1.2.1
+   * Fix CLI command runners
 * 1.2.0
    * Add CLI tool
 * 1.1.1
