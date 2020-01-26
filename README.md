@@ -76,6 +76,8 @@ After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
+* 1.2.0
+   * Add CLI tool
 * 1.1.1
     * Add link to curses package in readme
 * 1.1.0
