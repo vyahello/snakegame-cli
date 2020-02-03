@@ -2,13 +2,13 @@ from typing import IO, Sequence
 from setuptools import setup, find_packages
 
 
-def _description() -> str:
+def __description() -> str:
     """Returns project description."""
     with open("README.md", "r") as readme:  # type: IO
         return readme.read()
 
 
-def _requirements() -> Sequence[str]:
+def __requirements() -> Sequence[str]:
     """Returns requirements sequence."""
     with open("requirements.txt", "r") as requirements:  # type: IO
         return tuple(map(str.strip, requirements.readlines()))
@@ -21,12 +21,12 @@ if __name__ == "__main__":
         author="Volodymyr Yahello",
         author_email="vyahello@gmail.com",
         description="A simple snake game right in your command line. Just try it, it is fun :)",
-        long_description=_description(),
+        long_description=__description(),
         long_description_content_type="text/markdown",
         url="https://github.com/vyahello/snakegame-cli",
         packages=find_packages(),
         include_package_data=True,
-        install_requires=_requirements(),
+        install_requires=__requirements(),
         classifiers=[
             "Programming Language :: Python :: 3.4",
             "Programming Language :: Python :: 3.5",

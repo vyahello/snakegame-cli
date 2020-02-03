@@ -23,7 +23,6 @@
 - python 3.4 | 3.5 | 3.6 | 3.7 | 3.8
 - [curses](https://docs.python.org/3/library/curses.html)
 - [travis CI](https://travis-ci.org/)
-- [PYPI distribution](https://pypi.org/project/cli-snakegame)
 - code analysis
   - [pytest](https://pypi.org/project/pytest/)
   - [mypy](http://mypy.readthedocs.io/en/latest)
@@ -48,7 +47,7 @@ Then please execute `pysnake` CLI tool from your shell:
 
 Please execute command from the root of your source directory:
 ```bash
-➜ python -m snake --run --name pysnake
+➜ python -m snake --run --name mysnake
 ```
 
 ## Development notes
@@ -70,23 +69,7 @@ After please open `test-report.html` file to see detailed testing report
 
 ### Release notes
 
-* 1.2.1
-   * Fix CLI command runners
-* 1.2.0
-   * Add CLI tool
-* 1.1.1
-    * Add link to curses package in readme
-* 1.1.0
-    * Support python >=3.4 version
-    * Support python >=3.5 version
-* 1.0.1
-    * Polish documentation
-* 1.0.0
-    * Introduce PYPI package
-* 0.2.0
-    * Add navigation options
-* 0.1.0
-    * Introduce initial app version
+Please refer to [CHANGELOG](CHANGELOG.md) file to get more details
 
 ### Meta
 Author – Volodymyr Yahello vyahello@gmail.com
