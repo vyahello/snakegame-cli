@@ -16,8 +16,6 @@
 # Terminal snake game
 > A simple snake game right in your terminal using python built-in **curses** package.
 > Just try it, it is fun :)
->
-> ![Screenshot](snake/pic/game.jpg)
 
 ## Tools/features
 - python 3.4 | 3.5 | 3.6 | 3.7 | 3.8
@@ -32,6 +30,8 @@
 
 ## Usage
 Please press **esc** or **cntl+c** to stop the game.
+
+![Demo](usage.gif)
 
 ### Installation
 Please run following script to obtain latest package from PYPI:
