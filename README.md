@@ -1,3 +1,5 @@
+![Screenshot](icon.png)
+
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
 [![Coverage Status](https://img.shields.io/badge/coverage-56%25-orange)](https://img.shields.io/badge/coverage-56%25-orange)
