@@ -122,8 +122,8 @@ class TerminalSnake(Snake):
 
     def direction(self, direction: int) -> None:
         if (
-            direction
-            != self._setup.control.reverse_direction_map()[
+            direction  # pylint:disable=bad-continuation
+            != self._setup.control.reverse_direction_map()[  # pylint:disable=bad-continuation
                 self._setup.direction
             ]
         ):

@@ -1,3 +1,4 @@
+# pylint:disable=bad-continuation
 from abc import ABC, abstractmethod
 from random import randint
 from snake.environment.window import Window

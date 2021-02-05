@@ -88,7 +88,7 @@ class SnakeGame(Game):
 class PySnakeGame(Game):
     """The class represents pysnake game."""
 
-    __NAME: str = 'pysnake'
+    __NAME: str = "pysnake"
 
     def __init__(self) -> None:
         self._game: Game = SnakeGame(name=self.__NAME)

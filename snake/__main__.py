@@ -1,4 +1,4 @@
-from snake.game import Game, SnakeGame, PySnakeGame
+from snake.game import Game, PySnakeGame
 
 
 def __pysnake_game() -> Game:
