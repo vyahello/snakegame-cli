@@ -28,7 +28,9 @@ class Food(ABC):
 class SnakeFood(Food):
     """Snake food interface."""
 
-    def __init__(self, window: Window, max_long: int, max_lat: int, entity: str = "x") -> None:
+    def __init__(
+        self, window: Window, max_long: int, max_lat: int, entity: str = "x"
+    ) -> None:
         self._longitude: int = randint(1, max_long)
         self._latitude: int = randint(1, max_lat)
         self._max_long: int = max_long

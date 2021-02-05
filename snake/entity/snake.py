@@ -74,7 +74,9 @@ class TerminalSnake(Snake):
     def __init__(self, longitude: int, latitude: int, window: Window) -> None:
         self._setup = SnakeSetup(window)
         self._body_list: List[Any] = list()
-        self._body: Callable[[int], Body] = lambda track: SnakeBody(long=longitude - track, lat=latitude)
+        self._body: Callable[[int], Body] = lambda track: SnakeBody(
+            long=longitude - track, lat=latitude
+        )
         self._head: Body = SnakeBody(long=longitude, lat=latitude, entity="O")
         self._last_head_location: Tuple[int, int] = (longitude, latitude)
         self._direction_map: Dict[Any, Callable[..., Any]] = {
@@ -103,7 +105,12 @@ class TerminalSnake(Snake):
             self._setup.window.timeout()
 
     def collided(self) -> bool:
-        return any([body.location() == self.head().location() for body in self._body_list[:-1]])
+        return any(
+            [
+                body.location() == self.head().location()
+                for body in self._body_list[:-1]
+            ]
+        )
 
     def update(self) -> None:
         last_body: SnakeBody = self._body_list.pop(0)
@@ -114,12 +121,19 @@ class TerminalSnake(Snake):
         self._direction_map[self._setup.direction]()
 
     def direction(self, direction: int) -> None:
-        if direction != self._setup.control.reverse_direction_map()[self._setup.direction]:
+        if (
+            direction
+            != self._setup.control.reverse_direction_map()[
+                self._setup.direction
+            ]
+        ):
             self._setup.direction = direction
 
     def render(self) -> None:
         for body in self._body_list:
-            self._setup.window.add_string(body.latitude, body.longitude, body.entity())
+            self._setup.window.add_string(
+                body.latitude, body.longitude, body.entity()
+            )
 
     def head(self) -> SnakeBody:
         return self._body_list[-1]

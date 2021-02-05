@@ -1,4 +1,4 @@
-![Screenshot](icon.png)
+![Screenshot](logo.png)
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
@@ -10,8 +10,6 @@
 
 # Terminal snake game
 > A simple snake game right in your terminal using python built-in **curses** package.
->
-> Just try it, it is fun :)
 
 ## Tools/features
 

@@ -29,10 +29,18 @@ class SnakeGame(Game):
     def __init__(self, name: str) -> None:
         self._name = name
         self._control: Control = ControlKey()
-        self._terminal: Environment = TerminalEnvironment(width=WIDTH, height=HEIGHT)
+        self._terminal: Environment = TerminalEnvironment(
+            width=WIDTH, height=HEIGHT
+        )
         self._window: Window = TerminalWindow(env=self._terminal)
-        self._snake: Snake = TerminalSnake(longitude=SNAKE_LONGITUDE, latitude=SNAKE_LATITUDE, window=self._window)
-        self._food: Food = SnakeFood(window=self._window, max_long=MAX_LONGITUDE, max_lat=MAX_LATITUDE)
+        self._snake: Snake = TerminalSnake(
+            longitude=SNAKE_LONGITUDE,
+            latitude=SNAKE_LATITUDE,
+            window=self._window,
+        )
+        self._food: Food = SnakeFood(
+            window=self._window, max_long=MAX_LONGITUDE, max_lat=MAX_LATITUDE
+        )
 
     def run(self) -> None:
         self._terminal.init_screen()

@@ -64,4 +64,9 @@ class ControlKey(Control):
         return self._right, self._left, self._down, self._up
 
     def reverse_direction_map(self) -> Dict[int, int]:
-        return {self._up: self._down, self._down: self._up, self._left: self._right, self._right: self._left}
+        return {
+            self._up: self._down,
+            self._down: self._up,
+            self._left: self._right,
+            self._right: self._left,
+        }
