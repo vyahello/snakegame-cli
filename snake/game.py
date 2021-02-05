@@ -83,3 +83,18 @@ class SnakeGame(Game):
 
     def name(self) -> str:
         return f"Terminal game called '{self._name}'"
+
+
+class PySnakeGame(Game):
+    """The class represents pysnake game."""
+
+    __NAME: str = 'pysnake'
+
+    def __init__(self) -> None:
+        self._game: Game = SnakeGame(name=self.__NAME)
+
+    def run(self) -> None:
+        self._game.run()
+
+    def name(self) -> str:
+        return self.__NAME

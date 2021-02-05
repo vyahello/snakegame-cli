@@ -1,35 +1,15 @@
-import click
-from snake.game import Game, SnakeGame
+from snake.game import Game, SnakeGame, PySnakeGame
 
 
-@click.command()
-@click.option(
-    "--run",
-    "-r",
-    default=False,
-    show_default=True,
-    is_flag=True,
-    help="Run an application",
-)
-@click.option(
-    "--name",
-    "-n",
-    default="pysnake",
-    show_default=True,
-    help="Name of an application",
-)
-def easyrun(run: bool, name: str) -> None:
+def __pysnake_game() -> Game:
+    """Returns pysnake game application."""
+    return PySnakeGame()
+
+
+def __easyrun(game: Game) -> None:
     """The program allows to launch snakegame cli application."""
-    game: Game = SnakeGame(name)
-    if run:
-        print(f"Running {game.name()}")
-        game.run()
-    else:
-        print(f"{' Nothing to run ':=^50}")
-        context: click.Context = click.get_current_context()
-        click.echo(context.get_help())
-        context.exit(0)
+    game.run()
 
 
 if __name__ == "__main__":
-    easyrun()  # pylint: disable=no-value-for-parameter
+    __easyrun(game=__pysnake_game())
