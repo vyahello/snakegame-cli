@@ -46,7 +46,7 @@ pysnake
 
 Please execute command from the root of your source directory:
 ```bash
-python -m snake --run --name mysnake
+python -m snake
 ```
 
 ## Development notes
