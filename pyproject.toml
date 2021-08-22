@@ -1,6 +1,7 @@
 [tool.black]
 line-length = 80
 target-version = ["py36", "py37", "py38"]
+skip-string-normalization = true
 exclude = '''
 /(
     \.mypy_cache
