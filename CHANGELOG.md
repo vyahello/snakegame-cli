@@ -1,3 +1,7 @@
+1.2.2
+=======
+- Note that windows platform is not supported
+
 1.2.1
 =======
 - Fix CLI command runners
@@ -30,3 +34,4 @@
 0.1.0
 =======
 - Introduce initial app version
+d4b72177e1cc3384bf8b94e550054029fb18d48f

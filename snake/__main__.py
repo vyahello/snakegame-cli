@@ -11,5 +11,9 @@ def __easyrun(game: Game) -> None:
     game.run()
 
 
+def main() -> None:
+    __easyrun(__pysnake_game())
+
+
 if __name__ == "__main__":
-    __easyrun(game=__pysnake_game())
+    main()

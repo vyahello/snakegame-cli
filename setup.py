@@ -17,10 +17,11 @@ def __requirements() -> Sequence[str]:
 if __name__ == "__main__":
     setup(
         name="cli-snakegame",
-        version="1.2.1",
+        version="1.2.2",
         author="Volodymyr Yahello",
         author_email="vyahello@gmail.com",
-        description="A simple snake game right in your command line. Just try it, it is fun :)",
+        description="A simple snake game right in your command line. "
+        "Just try it, it is fun :)",
         long_description=__description(),
         long_description_content_type="text/markdown",
         url="https://github.com/vyahello/snakegame-cli",
@@ -37,5 +38,5 @@ if __name__ == "__main__":
             "Operating System :: OS Independent",
         ],
         python_requires=">=3.4",
-        entry_points={"console_scripts": ["pysnake = snake.__main__:easyrun"]},
+        entry_points={"console_scripts": ["pysnake = snake.__main__:main"]},
     )
