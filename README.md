@@ -19,6 +19,9 @@
 
 - python 3.4, 3.5, 3.6, 3.7, 3.8
 - [curses](https://docs.python.org/3/library/curses.html)
+- OS compatibility
+  - Linux
+  - Mac
 
 ### Development
 
