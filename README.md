@@ -1,4 +1,4 @@
-![Screenshot](logo.png)
+![Screenshot](media/logo.png)
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Build Status](https://travis-ci.org/vyahello/snakegame-cli.svg?branch=master)](https://travis-ci.org/vyahello/snakegame-cli)
@@ -35,7 +35,7 @@
 ## Usage
 Please press **esc** or **cntl+c** to stop the game.
 
-![Demo](usage.gif)
+![Demo](media/usage.gif)
 
 ### Installation
 Please run following script to obtain latest package from PYPI:
