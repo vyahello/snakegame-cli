@@ -1,4 +1,4 @@
-FROM vyahello/snakegame-cli-base:0.1.0
+FROM vyahello/cli-snakegame-base:0.1.0
 LABEL version=0.1.0 \
       metadata="The main image for smnakegame cli application" \
       maintainer="Volodymyr Yahello <vyahello@gmail.com>"

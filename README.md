@@ -44,7 +44,7 @@ Please press **esc** or **cntl+c** to stop the game.
 Please run following script to obtain application from docker hub:
 
 ```bash
-docker run -it vyahello/snakegame-cli:0.1.0
+docker run -it vyahello/cli-snakegame:0.1.0
 ```
 
 ### PYPI installation
