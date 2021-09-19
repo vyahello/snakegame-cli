@@ -1,3 +1,7 @@
+1.3.0
+=======
+- Support application from docker runner
+
 1.2.2
 =======
 - Note that windows platform is not supported

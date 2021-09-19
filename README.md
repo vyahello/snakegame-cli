@@ -9,7 +9,7 @@
 [![PyPi downloads](https://img.shields.io/pypi/dm/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame)
 [![Downloads](https://pepy.tech/badge/cli-snakegame)](https://pepy.tech/project/cli-snakegame)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/cli-snakegame.svg)](https://pypi.python.org/pypi/cli-snakegame/)
-[![Docker pulls](https://img.shields.io/docker/pulls/vyahello/snakegame-cli.svg)](https://hub.docker.com/repository/docker/vyahello/snakegame-cli)
+[![Docker pulls](https://img.shields.io/docker/pulls/vyahello/cli-snakegame.svg)](https://hub.docker.com/repository/docker/vyahello/cli-snakegame)
 
 # Terminal snake game
 > A simple snake game right in your terminal using python built-in **curses** package.
@@ -20,9 +20,7 @@
 
 - python 3.4, 3.5, 3.6, 3.7, 3.8
 - [curses](https://docs.python.org/3/library/curses.html)
-- OS compatibility
-  - Linux
-  - Mac
+- unix os compatible
 - docker
 
 ### Development
@@ -44,7 +42,7 @@ Please press **esc** or **cntl+c** to stop the game.
 Please run following script to obtain application from docker hub:
 
 ```bash
-docker run -it vyahello/snakegame-cli:0.1.0
+docker run -it vyahello/cli-snakegame:0.1.0
 ```
 
 ### PYPI installation
