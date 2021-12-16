@@ -7,7 +7,7 @@ def __pysnake_game() -> Game:
 
 
 def __easyrun(game: Game) -> None:
-    """The program allows to launch snakegame cli application."""
+    """The program allows launching snakegame cli application."""
     game.run()
 
 
